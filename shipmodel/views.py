@@ -2,6 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import authentication, permissions
 from django.contrib.auth.models import User
+from shipmodel.src.api import ShipModelAPI
 
 class ListCalculator(APIView):
     """
@@ -22,9 +23,9 @@ class ListCalculator(APIView):
 
     def post(self, request, format=None):
         """
-        Return a list of all users.
+        perform calculation based user inputs
         """
-        print(request.data)
+        apiHandler = ShipModelAPI()
 
         usernames = [user.username for user in User.objects.all()]
-        return Response({'cal':request.data['port']})
+        return Response({'result':apiHandler.perform_calculation(request.data)})
