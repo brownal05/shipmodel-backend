@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import authentication, permissions
 from django.contrib.auth.models import User
 
-class ListUsers(APIView):
+class ListCalculator(APIView):
     """
     View to list all users in the system.
 
