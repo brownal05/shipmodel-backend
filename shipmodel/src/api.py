@@ -10,15 +10,9 @@ class ShipModelAPI:
         # user input should get from web request
         user_inputs = {}
 
-        port_inputs = []
-        port_inputs.append({'port':None, 'est_days':3.00, 'port_type':'B', 'port_cost':0, 'distance':None})
-        port_inputs.append({'port':'houston', 'est_days':4.00, 'port_type':'B', 'port_cost':38000, 'distance':350})
-        port_inputs.append({'port':None, 'est_days':2.25, 'port_type':'L', 'port_cost':40000, 'distance':5147})
+        port_inputs = data['port_inputs']
+        character_inputs = data['character_inputs']
 
-        character_inputs = []
-        character_inputs.append({
-            'charterer':'Vitol', 'quantity':35000, 'commod':'CPP', 'rate':19.44, 'ws':135, 'commission':2.5
-        })
 
         # TODO this has to be derived based on model going to initiate based on user input
         # getModelSpecificOptions(modelName)
