@@ -6,5 +6,8 @@
 		],
 	"character_inputs":[
 			{ "charterer":"Vitol", "quantity":35000, "commod":"CPP", "rate":19.44, "ws":135, "commission":2.5}
-		]
+		],
+	"seca_bunker_loading":20000,
+	"canal_cost":"",
+	"other_income":""
 }
