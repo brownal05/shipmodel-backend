@@ -26,15 +26,18 @@ class ShipModelAPI:
 
             calculated_steam_sum = model.get_calculated_value_of_steam(steam_array)
             add_on_value_of_steam = model.get_add_on_value_of_steam(calculated_steam_sum)
+            print('### intermediate value calculated_steam_sum:', calculated_steam_sum)
+            print('### intermediate value add_on_value_of_steam:', add_on_value_of_steam)
 
             est_days_array = [o['est_days'] for o in port_inputs]
             calculated_est_days_sum = model.get_calculated_value_of_est_days(est_days_array)
+            print('### intermediate value calculated_est_days_sum:', add_on_value_of_steam)
 
             # TO get this from Model class, most are empty
             add_on_value_of_est_days = 0
 
             calculated_total = calculated_steam_sum + add_on_value_of_steam + calculated_est_days_sum + add_on_value_of_est_days
-            print(calculated_total)
+            print('calculated_total ',calculated_total)
 
             ifo_cons = model.get_IFO_cons_value(ifo_array, add_on_value_of_est_days, add_on_value_of_steam)
             display_ifo_cons = model.get_IFO_cons_value(ifo_array, add_on_value_of_est_days, add_on_value_of_steam, True)

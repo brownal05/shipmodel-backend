@@ -1,15 +1,18 @@
-{   "ship_name":"Mr eco",
+TC14
+
+{   "ship_name":"Mr",
 	"port_inputs":[
-			{"port":"", "est_days":3.00, "port_type":"B", "port_cost":0, "distance":""},
+			{"port":"", "est_days":0, "port_type":"B", "port_cost":0, "distance":0},
 			{"port":"houston", "est_days":4.00, "port_type":"B", "port_cost":38000, "distance":350},
-			{"port":"", "est_days":2.25, "port_type":"L", "port_cost":40000, "distance":5147}
+			{"port":"Amsterdam", "est_days":2.25, "port_type":"L", "port_cost":40000, "distance":5147}
 		],
 	"character_inputs":[
-			{ "charterer":"Vitol", "quantity":35000, "commod":"CPP", "rate":19.44, "ws":135, "commission":2.5}
+			{ "charterer":"Vitol", "quantity":38000, "commod":"CPP", "rate":19.44, "ws":160, "commission":2.5}
 		],
 	"seca_bunker_loading":20000,
 	"canal_cost":"",
 	"other_income":"",
-	"model_price_ifo" :554,
-    "model_price_aux" :575
+	"model_price_ifo" :535.50,
+    "model_price_aux" :558.00
 }
+
