@@ -21,6 +21,14 @@ class Vsl(models.Model):
     aux_steam = models.DecimalField(max_digits=4,decimal_places=1,blank=True, null=True)
     aux_port = models.DecimalField(max_digits=4,decimal_places=1,blank=True, null=True)
 
+    # speedB = models.FloatField(default=0)
+    # consB = models.FloatField(default=0)
+    # speedL = models.FloatField(default=0)
+    # consL = models.FloatField(default=0)
+    # ifo_port = models.FloatField(default=0)
+    # aux_steam = models.FloatField(default=0)
+    # aux_port = models.FloatField(default=0)
+
 
     def __str__(self):
         """Return a human readable representation of the model instance."""

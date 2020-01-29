@@ -1,12 +1,13 @@
 from datetime import datetime
 from datetime import timedelta
+from shipmodel.models import Vsl
 
 class BaseShipModel:
 
-    def __init__(self,options,price_ifo,price_aux):
+    def __init__(self,ship_name,price_ifo,price_aux):
         self.vsl = {}
         # pass this as a parameter, since these values are based on other sheets
-        self.options = options
+        self.options = self.__getModelSpecificOptions(ship_name)
         self.formatted_options = self.__get_formatted_self_options(self.options)
 
         # TODO this values should be derived
@@ -254,3 +255,23 @@ class BaseShipModel:
             if temp_options[key] == None or temp_options == '':
                 temp_options[key] = 0
         return temp_options
+
+    def __getModelSpecificOptions(self,ship_name):
+        result = Vsl.objects.filter(vessel__contains=ship_name).values()
+        if len(result)==0:
+             raise Exception('No ship found with given name')
+
+        model_specific_options = {
+            'A4': 0, 'B4': 0, 'C4': 0, 'D4': 0, 'E4': 0, 'F4': 0, 'G4': 0
+        }
+        for vsl in result:
+            model_specific_options['A4'] =  float(vsl['speedB'])
+            model_specific_options['B4'] =  float(vsl['consB'])
+            model_specific_options['C4'] =  float(vsl['speedL'])
+            model_specific_options['D4'] =  float(vsl['consL'])
+            model_specific_options['E4'] =  float(vsl['ifo_port'])
+            model_specific_options['F4'] =  float(vsl['aux_steam'])
+            model_specific_options['G4'] =  float(vsl['aux_port'])
+
+            break
+        return model_specific_options
