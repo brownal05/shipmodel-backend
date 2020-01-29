@@ -1,4 +1,4 @@
-{   "ship_name":"Mr eco"
+{   "ship_name":"Mr eco",
 	"port_inputs":[
 			{"port":"", "est_days":3.00, "port_type":"B", "port_cost":0, "distance":""},
 			{"port":"houston", "est_days":4.00, "port_type":"B", "port_cost":38000, "distance":350},
@@ -9,7 +9,7 @@
 		],
 	"seca_bunker_loading":20000,
 	"canal_cost":"",
-	"other_income":""
+	"other_income":"",
 	"model_price_ifo" :554,
     "model_price_aux" :575
 }

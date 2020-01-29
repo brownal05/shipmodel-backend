@@ -13,7 +13,7 @@ class BaseShipModel:
         # TODO this values should be derived
         self.price_ifo = price_ifo
         self.price_aux = price_aux
-        self.run_cost = None
+        self.run_cost = self.__get_run_cost()
 
 
     def get_steam_value(self,distance,port_type,display=False):
@@ -275,3 +275,6 @@ class BaseShipModel:
 
             break
         return model_specific_options
+
+    def __get_run_cost(self):
+        return None
