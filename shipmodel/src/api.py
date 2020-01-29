@@ -14,8 +14,8 @@ class ShipModelAPI:
             character_inputs = data['character_inputs']
 
             # TODO this has to be derived based on model going to initiate based on user input
-            model_price_ifo = 554
-            model_price_aux = 575
+            model_price_ifo = data['model_price_ifo']
+            model_price_aux = data['model_price_aux']
 
             model = BaseShipModel(ship_name, model_price_ifo, model_price_aux)
 
